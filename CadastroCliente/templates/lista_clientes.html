@@ -7,17 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>{{ nome }}</h1>
-    <h2>Hello World</h2>
-    <h3>Hello World</h3>
-    <h4>Hello World</h4>
-    <h5>Hello World</h5>
-    <h6>Hello World</h6>
+    <h1>Clientes Senac - SMP</h1>
 
-<ul>
-    {% for fruta in frutas %}
-    <li>{{ fruta }}</li>
-    {% endfor %}
-</ul>
+    <ul>
+        {% for x in clientes %}
+        <li><a href="/cliente/{{ x.id }}">{{ x.nome }}</a> - {{ x.data_nascimento }}</li>
+        {% endfor %}
+
+    </ul>
 </body>
 </html>
