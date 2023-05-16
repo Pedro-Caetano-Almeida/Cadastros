@@ -7,22 +7,56 @@
     <title> {{cliente.nome}} </title>
 </head>
 <body>
+    <body bgcolor="#e5f5f9">
 
-    <h1> {{cliente.nome}} </h1>
+    <h1><center>{{cliente.nome}}</center></h1>
 
-<table border="1">
+<table align='center'><tr align='center'><td align='center'><table border="1">
     <tr>
-        <td>Nome:</td>
-        <td> {{ cliente.nome }}</td>
+        <td><center><strong>Nome:</strong></center></td>
+        <td> <center>{{ cliente.nome }}</center></td>
     </tr>
     <tr>
-        <td>Data de Nascimento:</td>
-        <td> {{ cliente.data_nascimento }} </td>
+        <td><center><strong>Data de Nascimento:</strong></center></td>
+        <td> <center>{{ cliente.data_nascimento|date:"d/m/Y" }}</center></td>
     </tr>
     <tr>
-        <td>Endereço:</td>
-        <td> {{cliente.endereco}}, {{cliente.nro}} - {{cliente.bairro}} - {{cliente.cep}}</td>
+        <td><center><strong>Endereço: :</strong></center></td>
+        <td> <center>{{cliente.endereco}}, {{cliente.nro}} - {{cliente.bairro}} - {{cliente.cep}}</center></td>
     </tr>
+    <tr>
+        <td><center><strong>Cpf:</strong></center></td>
+        <td> <center>{{ cliente.cpf }}</center></td>
+    </tr>
+    <tr>
+        <td><center><strong>E-mail:</strong></center></td>
+        <td> <center>{{ cliente.email }}</center></td>
+    </tr>
+    <tr>
+        <td><center><strong>Matrícula:</strong></center></td>
+        <td> <center>{{ cliente.matricula }}</center></td>
+    </tr>
+    <tr>
+        <td><center><strong>Estado Civil:</strong></center></td>
+        <td> <center>{{ cliente.get_estado_civil_display }}</center></td>
+    </tr>
+    <tr>
+        <td><center><strong>Profissão:</strong></center></td>
+        <td> <center>{{ cliente.profissao }}</center></td>
+    </tr>
+    <tr>
+        <td><center><strong>Interesses:</strong></center></td>
+        <td>{{ cliente.interesse.all|join:"<br>"}}</td>
+    </tr>
+    <tr>
+        <td><center><strong>Telefones:</strong></center></td>
+        <td>
+            {% for tel in telefones%}
+                ({{ tel.ddd}}) {{ tel.numero}} <br>
+            {% endfor %}
+        </td>
+    </tr>
+
 </table>
 </body>
 </html>

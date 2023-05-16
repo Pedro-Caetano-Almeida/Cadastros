@@ -1,0 +1,23 @@
+/*seletor universal*/
+
+*{  
+    background-color: bisque;
+    color: #00ffcc;
+    font-size: 15px;
+    font-style: italic;
+
+}
+
+/*seletor de tag*/
+h2,h3{
+    color: green;
+    font-weight: bold;
+
+}
+
+/*seletor de classe*/
+
+.TextoLaranja {
+    color: orange;
+
+}

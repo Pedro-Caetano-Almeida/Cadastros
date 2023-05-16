@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,14 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/estilos.css' %}">
 </head>
 <body>
+    <!-- adicionando img no django-->
+    <img src="{% static '/img/Logo_senac.jpg' %}">
     <h1>{{ nome }}</h1>
     <h2>Hello World</h2>
     <h3>Hello World</h3>
     <h4>Hello World</h4>
     <h5>Hello World</h5>
-    <h6>Hello World</h6>
+    <h6 class="TextoLaranja">Hello World</h6>
 
 <ul>
     {% for fruta in frutas %}
